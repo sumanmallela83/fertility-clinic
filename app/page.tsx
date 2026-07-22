@@ -1,40 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { SiteShell } from "@/components/site-shell";
 
 const appointmentHref =
   "mailto:hello@horizonfertility.com?subject=Book%20a%20Consultation&body=Hello%20Horizon%20Fertility%20team%2C%20I%20would%20like%20to%20book%20a%20consultation.%20Please%20let%20me%20know%20the%20best%20time%20for%20an%20appointment.";
-
-const services = [
-  {
-    title: "IVF Treatment",
-    description:
-      "Advanced fertility treatment with personalized protocols, embryo assessment, and thoughtful support at every stage.",
-  },
-  {
-    title: "ICSI & IUI",
-    description:
-      "Targeted assisted reproduction options designed to improve fertilization and increase the chance of success.",
-  },
-  {
-    title: "PCOS & Infertility Care",
-    description:
-      "Comprehensive evaluation and care for hormonal imbalances, ovulation concerns, and male-factor infertility.",
-  },
-  {
-    title: "Surrogacy & Egg Freezing",
-    description:
-      "Flexible fertility preservation and family-building pathways tailored to your long-term goals.",
-  },
-  {
-    title: "Gynecology & Pregnancy Care",
-    description:
-      "Gentle, evidence-based support for women’s reproductive health, pregnancy planning, and follow-up care.",
-  },
-  {
-    title: "Fertility Preservation",
-    description:
-      "A calm, expert-led approach to protecting your reproductive future with clarity and confidence.",
-  },
-];
 
 const processSteps = [
   {
@@ -68,14 +38,6 @@ const stats = [
   { value: "20+", label: "Years of expertise" },
 ];
 
-const branches = [
-  "Hyderabad",
-  "Warangal",
-  "Nizamabad",
-  "Vijayawada",
-  "Kurnool",
-];
-
 const faqItems = [
   {
     question: "What fertility treatments do you offer?",
@@ -96,101 +58,100 @@ const faqItems = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[linear-gradient(135deg,#fff8fb_0%,#fdf2f8_45%,#ffffff_100%)] text-slate-800">
-      <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rose-500">
-            Horizon Fertility
-          </p>
-          <p className="text-sm text-slate-600">Leading fertility care for hopeful families</p>
-        </div>
-        <a
-          href="/appointment"
-          className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700"
-        >
-          Book a consultation
-        </a>
-      </header>
-
-      <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 pb-16 lg:px-8">
-        <section className="grid items-center gap-8 rounded-[2rem] border border-rose-100 bg-white/80 p-8 shadow-[0_20px_80px_-30px_rgba(190,24,93,0.35)] backdrop-blur lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
-          <div className="space-y-6">
-            <span className="inline-flex rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-700">
-              Trusted IVF, ICSI, IUI & fertility care
-            </span>
-            <div className="space-y-4">
-              <h1 className="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-                Helping couples and individuals build parenthood journeys with confidence.
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-600">
-                At Horizon Fertility, we combine advanced reproductive medicine with compassionate guidance to support you from the first consultation through every step of treatment.
-              </p>
+    <SiteShell mainClassName="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 pb-16 lg:px-8">
+        <section className="relative overflow-hidden rounded-[2rem] border border-rose-100 bg-[linear-gradient(120deg,#fdf2f8_0%,#fff7ed_45%,#ffffff_100%)] p-8 shadow-[0_25px_90px_-35px_rgba(190,24,93,0.35)] lg:p-10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(251,207,232,0.35),transparent_45%)]" />
+          <div className="relative grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div className="space-y-6">
+              <span className="inline-flex rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-700">
+                Compassionate fertility care
+              </span>
+              <div className="space-y-4">
+                <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                  Start your parenthood journey with expert guidance.
+                </h1>
+                <p className="max-w-2xl text-lg leading-8 text-slate-600">
+                  Trusted IVF, ICSI, IUI, and fertility preservation care designed around your needs, timeline, and hopes.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="/appointment"
+                  className="inline-flex rounded-full bg-rose-600 px-6 py-3 text-center font-semibold text-white transition hover:bg-rose-700"
+                >
+                  Book an appointment
+                </a>
+                <a
+                  href="/services"
+                  className="inline-flex rounded-full border border-slate-200 bg-white px-6 py-3 text-center font-semibold text-slate-700 transition hover:border-rose-200 hover:text-rose-700"
+                >
+                  Explore treatments
+                </a>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="rounded-2xl border border-slate-200 bg-white/75 p-4">
+                    <p className="text-xl font-semibold text-slate-900">{stat.value}</p>
+                    <p className="mt-1 text-sm text-slate-600">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#services"
-                className="rounded-full bg-rose-600 px-6 py-3 text-center font-semibold text-white transition hover:bg-rose-700"
-              >
-                Explore treatments
-              </a>
-              <a
-                href="#contact"
-                className="rounded-full border border-slate-200 px-6 py-3 text-center font-semibold text-slate-700 transition hover:border-rose-200 hover:text-rose-700"
-              >
-                Book appointment
-              </a>
-            </div>
-            <div className="grid gap-4 pt-2 sm:grid-cols-3">
-              {stats.map((stat) => (
-                <div key={stat.label} className="rounded-2xl bg-slate-50 p-4">
-                  <dt className="text-2xl font-semibold text-slate-900">{stat.value}</dt>
-                  <dd className="mt-1 text-sm text-slate-600">{stat.label}</dd>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[1.75rem] border border-rose-100 bg-rose-50 p-6">
-            <div className="overflow-hidden rounded-[1.25rem] border border-white/80 bg-white p-2 shadow-inner">
+            <div className="overflow-hidden rounded-[1.75rem] border border-white/80 bg-white p-3 shadow-xl">
               <Image
-                src="/clinic-hero.svg"
-                alt="Illustration representing a supportive fertility clinic experience"
-                width={640}
-                height={720}
-                priority
-                className="h-auto w-full rounded-[1rem]"
+                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80"
+                alt="Fertility specialist portrait"
+                width={900}
+                height={1100}
+                className="h-[30rem] w-full rounded-[1.3rem] object-cover"
               />
             </div>
-            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.3em] text-rose-700">
-              Personalized fertility planning
-            </p>
-            <h2 className="mt-3 text-2xl font-semibold text-slate-900">
-              A calm, expert-led experience for every patient journey.
-            </h2>
           </div>
         </section>
 
-        <section id="services" className="space-y-6">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <section className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
-                Our Services
+                Why choose us
               </p>
-              <h2 className="text-3xl font-semibold text-slate-900">
-                Comprehensive fertility solutions under one roof.
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900">
+                World-class fertility care with a personal, reassuring approach.
               </h2>
+              <p className="mt-4 text-lg leading-8 text-slate-600">
+                Our clinic combines advanced reproductive science with one-on-one support so every patient feels guided, informed, and cared for throughout the journey.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span className="rounded-full bg-rose-50 px-4 py-2 text-sm font-medium text-rose-700">Advanced IVF protocols</span>
+                <span className="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">Transparent guidance</span>
+                <span className="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">Patient-first care</span>
+              </div>
+              <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-rose-100 bg-rose-50 p-3 shadow-sm">
+                <Image
+                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1000&q=80"
+                  alt="Doctor speaking with a patient about fertility treatment"
+                  width={900}
+                  height={900}
+                  className="h-72 w-full rounded-[1.2rem] object-cover"
+                />
+              </div>
             </div>
-            <p className="max-w-xl text-slate-600">
-              We offer advanced treatment options for infertility, fertility preservation, gynecological care, and pregnancy planning with a focus on expertise and empathy.
-            </p>
-          </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {services.map((service) => (
-              <article key={service.title} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-slate-900">{service.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{service.description}</p>
-              </article>
-            ))}
+            <div className="rounded-[1.5rem] bg-slate-50 p-6">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1.25rem] bg-white p-4 shadow-sm">
+                  <p className="text-2xl font-semibold text-slate-900">1,800+</p>
+                  <p className="mt-1 text-sm text-slate-600">Happy patient journeys</p>
+                </div>
+                <div className="rounded-[1.25rem] bg-white p-4 shadow-sm">
+                  <p className="text-2xl font-semibold text-slate-900">12+</p>
+                  <p className="mt-1 text-sm text-slate-600">Years of expertise</p>
+                </div>
+                <div className="rounded-[1.25rem] bg-white p-4 shadow-sm sm:col-span-2">
+                  <p className="text-2xl font-semibold text-slate-900">4.9/5</p>
+                  <p className="mt-1 text-sm text-slate-600">Patient experience and trust</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -200,10 +161,10 @@ export default function Home() {
               About Our Clinic
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-slate-900">
-              Leading fertility specialists dedicated to thoughtful, results-driven care.
+              Thoughtful fertility care led by experienced specialists.
             </h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">
-              Our team brings together experienced fertility experts, advanced diagnostics, and a patient-centered approach to help you move forward with clarity, comfort, and confidence.
+              Our team brings together advanced diagnostics and a patient-centered approach to support you with clarity, comfort, and confidence at every step.
             </p>
           </div>
           <div className="rounded-[1.5rem] bg-slate-50 p-6">
@@ -216,33 +177,6 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
-
-        <section className="grid gap-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
-          <div className="overflow-hidden rounded-[1.5rem] border border-rose-100 bg-rose-50 p-3">
-            <Image
-              src="/doctor-portrait.svg"
-              alt="Illustrated fertility specialist portrait"
-              width={720}
-              height={900}
-              className="h-auto w-full rounded-[1.2rem]"
-            />
-          </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
-              Meet Our Specialist
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-900">
-              Experienced care for your most personal journey.
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-600">
-              Dr. Ananya Rao brings years of expertise in reproductive medicine and has helped many families navigate fertility treatment with compassion, transparency, and confidence.
-            </p>
-            <div className="mt-6 rounded-[1.25rem] bg-slate-50 p-5 text-sm leading-7 text-slate-700">
-              <p><span className="font-semibold text-slate-900">Qualifications:</span> MBBS, DGO, Reproductive Medicine Specialist</p>
-              <p className="mt-2"><span className="font-semibold text-slate-900">Focus:</span> IVF, IUI, fertility preservation, PCOS, and gynecological care</p>
-            </div>
           </div>
         </section>
 
@@ -274,29 +208,6 @@ export default function Home() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
-                Our Branches
-              </p>
-              <h2 className="text-3xl font-semibold text-slate-900">
-                Caring for patients across multiple cities.
-              </h2>
-            </div>
-            <p className="max-w-xl text-slate-600">
-              With a growing network of centers, patients can access trusted fertility support close to home and feel confident about ongoing care.
-            </p>
-          </div>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {branches.map((branch) => (
-              <span key={branch} className="rounded-full border border-rose-100 bg-rose-50 px-4 py-2 text-sm font-medium text-rose-700">
-                {branch}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        <section className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
                 FAQs
               </p>
               <h2 className="text-3xl font-semibold text-slate-900">
@@ -314,48 +225,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="grid gap-6 rounded-[2rem] border border-rose-100 bg-white p-8 shadow-sm lg:grid-cols-[1fr_0.9fr] lg:p-10">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
-              Start your consultation
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-900">
-              Book an appointment with our fertility team today.
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-600">
-              Whether you are exploring fertility treatment for the first time or returning for continued care, we’re here to guide you with compassion and clarity.
-            </p>
-            <div className="mt-6 space-y-3 text-sm text-slate-700">
-              <p><span className="font-semibold text-slate-900">Phone:</span> +91 98765 43210</p>
-              <p><span className="font-semibold text-slate-900">Email:</span> hello@horizonfertility.com</p>
-              <p><span className="font-semibold text-slate-900">Hours:</span> Mon–Sat • 9:30 AM – 8:30 PM</p>
-            </div>
-          </div>
-          <div className="rounded-[1.5rem] bg-rose-50 p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-700">
-              Contact us
-            </p>
-            <div className="mt-6 flex flex-col gap-3">
-              <a
-                href="/appointment"
-                className="inline-flex rounded-full bg-rose-600 px-6 py-3 text-center font-semibold text-white transition hover:bg-rose-700"
-              >
-                Book appointment
-              </a>
-              <a
-                href="tel:+919876543210"
-                className="inline-flex rounded-full border border-slate-200 px-6 py-3 text-center font-semibold text-slate-700 transition hover:border-rose-200 hover:text-rose-700"
-              >
-                Call clinic
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="border-t border-slate-200 bg-white/70 px-6 py-6 text-center text-sm text-slate-600 lg:px-8">
-        Horizon Fertility • Compassionate, advanced fertility care for every family.
-      </footer>
-    </div>
+    </SiteShell>
   );
 }
