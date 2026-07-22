@@ -1,3 +1,8 @@
+import Image from "next/image";
+
+const appointmentHref =
+  "mailto:hello@horizonfertility.com?subject=Book%20a%20Consultation&body=Hello%20Horizon%20Fertility%20team%2C%20I%20would%20like%20to%20book%20a%20consultation.%20Please%20let%20me%20know%20the%20best%20time%20for%20an%20appointment.";
+
 const services = [
   {
     title: "Fertility Assessment",
@@ -52,7 +57,7 @@ export default function Home() {
           <p className="text-sm text-slate-600">Compassionate care for growing families</p>
         </div>
         <a
-          href="#contact"
+          href={appointmentHref}
           className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700"
         >
           Book a consultation
@@ -104,7 +109,17 @@ export default function Home() {
           </div>
 
           <div className="rounded-[1.75rem] border border-rose-100 bg-rose-50 p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-700">
+            <div className="overflow-hidden rounded-[1.25rem] border border-white/80 bg-white p-2 shadow-inner">
+              <Image
+                src="/clinic-hero.svg"
+                alt="Illustration of a caring fertility clinic team"
+                width={640}
+                height={720}
+                priority
+                className="h-auto w-full rounded-[1rem]"
+              />
+            </div>
+            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.3em] text-rose-700">
               New patient experience
             </p>
             <h2 className="mt-3 text-2xl font-semibold text-slate-900">
@@ -199,12 +214,20 @@ export default function Home() {
             <p className="mt-4 text-lg leading-8 text-slate-600">
               Speak with our team about your fertility goals and receive a thoughtful plan designed for you.
             </p>
-            <a
-              href="mailto:hello@horizonfertility.com"
-              className="mt-6 inline-flex rounded-full bg-rose-600 px-6 py-3 font-semibold text-white transition hover:bg-rose-700"
-            >
-              hello@horizonfertility.com
-            </a>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={appointmentHref}
+                className="inline-flex rounded-full bg-rose-600 px-6 py-3 font-semibold text-white transition hover:bg-rose-700"
+              >
+                Book appointment
+              </a>
+              <a
+                href="tel:+15550199"
+                className="inline-flex rounded-full border border-slate-200 px-6 py-3 font-semibold text-slate-700 transition hover:border-rose-200 hover:text-rose-700"
+              >
+                Call clinic
+              </a>
+            </div>
           </div>
         </section>
       </main>
