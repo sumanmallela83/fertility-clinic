@@ -105,7 +105,7 @@ export default function Home() {
           <p className="text-sm text-slate-600">Leading fertility care for hopeful families</p>
         </div>
         <a
-          href={appointmentHref}
+          href="/appointment"
           className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700"
         >
           Book a consultation
@@ -337,7 +337,7 @@ export default function Home() {
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a
-                href={appointmentHref}
+                href="/appointment"
                 className="inline-flex rounded-full bg-rose-600 px-6 py-3 text-center font-semibold text-white transition hover:bg-rose-700"
               >
                 Book appointment
