@@ -68,6 +68,32 @@ const stats = [
   { value: "20+", label: "Years of expertise" },
 ];
 
+const branches = [
+  "Hyderabad",
+  "Warangal",
+  "Nizamabad",
+  "Vijayawada",
+  "Kurnool",
+];
+
+const faqItems = [
+  {
+    question: "What fertility treatments do you offer?",
+    answer:
+      "We provide IVF, ICSI, IUI, fertility preservation, PCOS care, and gynecological support tailored to your goals.",
+  },
+  {
+    question: "How do I book a consultation?",
+    answer:
+      "You can book online via email or call our clinic directly to arrange a private consultation.",
+  },
+  {
+    question: "Do you support patients beyond treatment?",
+    answer:
+      "Yes. We guide patients through planning, monitoring, and follow-up care with ongoing communication and support.",
+  },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[linear-gradient(135deg,#fff8fb_0%,#fdf2f8_45%,#ffffff_100%)] text-slate-800">
@@ -193,6 +219,33 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="grid gap-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
+          <div className="overflow-hidden rounded-[1.5rem] border border-rose-100 bg-rose-50 p-3">
+            <Image
+              src="/doctor-portrait.svg"
+              alt="Illustrated fertility specialist portrait"
+              width={720}
+              height={900}
+              className="h-auto w-full rounded-[1.2rem]"
+            />
+          </div>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
+              Meet Our Specialist
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900">
+              Experienced care for your most personal journey.
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Dr. Ananya Rao brings years of expertise in reproductive medicine and has helped many families navigate fertility treatment with compassion, transparency, and confidence.
+            </p>
+            <div className="mt-6 rounded-[1.25rem] bg-slate-50 p-5 text-sm leading-7 text-slate-700">
+              <p><span className="font-semibold text-slate-900">Qualifications:</span> MBBS, DGO, Reproductive Medicine Specialist</p>
+              <p className="mt-2"><span className="font-semibold text-slate-900">Focus:</span> IVF, IUI, fertility preservation, PCOS, and gynecological care</p>
+            </div>
+          </div>
+        </section>
+
         <section className="rounded-[2rem] border border-slate-200 bg-slate-900 p-8 text-white lg:p-10">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -217,6 +270,50 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
+                Our Branches
+              </p>
+              <h2 className="text-3xl font-semibold text-slate-900">
+                Caring for patients across multiple cities.
+              </h2>
+            </div>
+            <p className="max-w-xl text-slate-600">
+              With a growing network of centers, patients can access trusted fertility support close to home and feel confident about ongoing care.
+            </p>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {branches.map((branch) => (
+              <span key={branch} className="rounded-full border border-rose-100 bg-rose-50 px-4 py-2 text-sm font-medium text-rose-700">
+                {branch}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
+                FAQs
+              </p>
+              <h2 className="text-3xl font-semibold text-slate-900">
+                Answers to common questions about fertility care.
+              </h2>
+            </div>
+          </div>
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {faqItems.map((item) => (
+              <div key={item.question} className="rounded-[1.25rem] border border-slate-200 bg-slate-50 p-5">
+                <h3 className="text-lg font-semibold text-slate-900">{item.question}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-600">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section id="contact" className="grid gap-6 rounded-[2rem] border border-rose-100 bg-white p-8 shadow-sm lg:grid-cols-[1fr_0.9fr] lg:p-10">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">
@@ -228,6 +325,11 @@ export default function Home() {
             <p className="mt-4 text-lg leading-8 text-slate-600">
               Whether you are exploring fertility treatment for the first time or returning for continued care, we’re here to guide you with compassion and clarity.
             </p>
+            <div className="mt-6 space-y-3 text-sm text-slate-700">
+              <p><span className="font-semibold text-slate-900">Phone:</span> +91 98765 43210</p>
+              <p><span className="font-semibold text-slate-900">Email:</span> hello@horizonfertility.com</p>
+              <p><span className="font-semibold text-slate-900">Hours:</span> Mon–Sat • 9:30 AM – 8:30 PM</p>
+            </div>
           </div>
           <div className="rounded-[1.5rem] bg-rose-50 p-6">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-700">
@@ -241,7 +343,7 @@ export default function Home() {
                 Book appointment
               </a>
               <a
-                href="tel:+15550199"
+                href="tel:+919876543210"
                 className="inline-flex rounded-full border border-slate-200 px-6 py-3 text-center font-semibold text-slate-700 transition hover:border-rose-200 hover:text-rose-700"
               >
                 Call clinic
