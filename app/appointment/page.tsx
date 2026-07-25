@@ -32,8 +32,8 @@ export default function AppointmentPage() {
   };
 
   return (
-    <SiteShell mainClassName="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 pb-16 lg:px-8">
-        <section className="grid gap-8 rounded-[2rem] border border-rose-100 bg-white/80 p-8 shadow-[0_20px_80px_-30px_rgba(190,24,93,0.35)] backdrop-blur lg:grid-cols-[1.02fr_0.98fr] lg:p-12">
+    <SiteShell mainClassName="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 pb-16 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pt-10">
+        <section className="grid gap-8 rounded-[2rem] border border-rose-100 bg-white/80 p-6 shadow-[0_20px_80px_-30px_rgba(190,24,93,0.35)] backdrop-blur sm:p-8 lg:grid-cols-[1.02fr_0.98fr] lg:p-12">
           <div className="space-y-6">
             <span className="inline-flex rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-700">
               Book an appointment

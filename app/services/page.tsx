@@ -51,8 +51,8 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <SiteShell mainClassName="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-12 lg:px-8">
-        <section className="grid gap-8 rounded-[2rem] border border-rose-100 bg-white/80 p-8 shadow-[0_20px_80px_-30px_rgba(190,24,93,0.35)] backdrop-blur lg:grid-cols-[1.05fr_0.95fr] lg:p-10">
+    <SiteShell mainClassName="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+        <section className="grid gap-8 rounded-[2rem] border border-rose-100 bg-white/80 p-6 shadow-[0_20px_80px_-30px_rgba(190,24,93,0.35)] backdrop-blur sm:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:p-10">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-500">Our Services</p>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
