@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Horizon Fertility | Compassionate Fertility Care",
+  title: "Mahita Fertility | Advanced IVF & Fertility Care",
   description:
-    "Discover advanced fertility care, personalized treatment plans, and supportive guidance at Horizon Fertility.",
+    "Discover advanced fertility care, personalized treatment plans, and compassionate support at Mahita Fertility.",
 };
 
 export default function RootLayout({
